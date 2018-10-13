@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <title>Document</title>
+    <style>
+        .container {
+            color: royalblue;
+        }
+    </style>
+</head>
+<body>
+
+<div id="appRoot">
+
+</div>
+
+<!-- Create a script tag that holds all my react content -->
+<script>
+    /*
+        react has many factory functions to make it easier for me to create elements
+            -  React.DOM.li
+            -  React.DOM.div
+            -  React.DOM.span
+            -  React.DOM.p
+    */
+
+    // function factories create a much easier way of creating react elements
+    var listItem1 = React.DOM.li({key:'item-1'}, 'Albus Dumbledore')
+    var listItem2 = React.DOM.li({key:'item-2'}, 'Delores Umbridge')
+    var listItem3 = React.DOM.li({key:'item-3'}, 'Severus Snape')
+    var listItem4 = React.DOM.li({key:'item-4'}, 'Minerva McGonagall')
+
+    // then I have to create the reactFragment which essential bundle everything node up in a specific collection
+    var reactFragement = [listItem1,listItem2,listItem3, listItem4];
+
+    // Create the component and assign it to a parent Class
+    var listElement = React.DOM.ul({className: 'container'}, reactFragement);
+
+    // Render the new component to the appRoot DOM element
+    ReactDOM.render(listElement, document.getElementById('appRoot'))
+
+</script>
+    
+</body>
+</html>
+
