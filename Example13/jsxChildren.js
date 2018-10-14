@@ -3,7 +3,6 @@
     - props.children is a powerful way to access child elements before I even know what they are
 
 */
-
 function RedText(props){
     // props.children refers to all children of this component
     return <div className="red">{props.children}</div>
